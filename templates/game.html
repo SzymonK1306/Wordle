@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Word Game</title>
+</head>
+<body>
+    <h1>Guess the Word!</h1>
+    <p>Guess the word by entering a word:</p>
+    <form method="POST" action="/">
+        <input type="text" name="word">
+        <input type="submit" value="Guess">
+    </form>
+    <p>{{ guessed_word | safe }}</p>
+    {% if error %}
+    <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    {% if message %}
+    <p style="color: green;">{{ message }}</p>
+    {% endif %}
+</body>
+</html>
